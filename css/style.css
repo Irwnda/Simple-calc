@@ -1,0 +1,116 @@
+:root {
+    --primary: #22252e;
+    --secondary: #2a2c38;
+    --white-text: #f0f0f0;
+    --granny-smith: #667274;
+    --turquoise: #4dd7c0;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+    background-color: darkslategray;
+}
+
+.container {   
+    background-color: var(--primary);
+    height: 35rem;
+    width: 20rem;
+    margin: 0 auto;
+    border-radius: 1.25rem;
+    padding-top: .5rem;
+    position: relative;
+}
+
+.switch {
+    cursor: default;
+    margin: auto;
+    background-color: var(--secondary);
+    width: 5rem;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+.switch i{
+    font-size: 1.25rem;
+    color: var(--granny-smith);
+    padding: .5rem;
+}
+
+.switch i.inactive {
+    cursor: pointer;
+}
+
+.switch i.dark-mode {
+    color: var(--white-text);
+}
+
+.button {
+    background-color: var(--secondary);
+    position: absolute;
+    bottom: 0;
+    border-radius: 1.25rem;
+
+    padding: 1rem 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: minmax(4rem, auto) repeat(4, 4rem);
+}
+
+.button > button {
+    background-color: var(--secondary);
+    font-size: 2rem;
+    cursor: pointer;
+    border: 1px solid var(--secondary);
+    outline: none;
+}
+
+.button > button:hover {
+    background-color: #404652;
+}
+
+[all-clear],
+[delete],
+[operator],
+[equals] {
+    color: var(--turquoise);
+}
+
+[number] {
+    color: var(--white-text);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.output {
+    background-color: inherit;
+    margin-top: 2rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current {
+    color: rgba(255, 255, 255, 1);
+    font-size: 3rem;
+}
+
+.fal,
+.previous-operand,
+.current {
+    background-color: inherit;
+}
