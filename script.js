@@ -12,7 +12,13 @@ class Calculator {
     }
 
     delete(){
-        this.currentOperand = this.currentOperand.toString().slice(0, -1)
+        if(this.currentOperand !== '')
+            this.currentOperand = this.currentOperand.toString().slice(0, -1)
+        else if(this.currentOperand === '' && this.previousOperand !== ''){
+            this.currentOperand = this.previousOperand
+            this.previousOperand = ''
+            this.operator = undefined
+        }
     }
 
     appendNumber(number){
@@ -21,7 +27,11 @@ class Calculator {
     }
 
     operatorFunction(operator){
-        if(this.currentOperand === '') return
+        if(this.currentOperand === ''){
+            if(this.previousOperand !== '')
+                this.operator = operator
+            return
+        }
         if(this.previousOperand !== ''){
             this.compute()
         }
