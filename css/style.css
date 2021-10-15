@@ -6,7 +6,7 @@
     --turquoise: #4dd7c0;
 }
 
-body, body::before, body::after {
+body{
     box-sizing: border-box;
     font-weight: normal;
     background-color: darkslategray;
@@ -41,7 +41,7 @@ body, body::before, body::after {
     cursor: pointer;
 }
 
-.switch i.dark-mode {
+.switch i.fa-moon {
     color: var(--white-text);
 }
 
@@ -51,7 +51,7 @@ body, body::before, body::after {
     bottom: 0;
     border-radius: 1.25rem;
 
-    padding: 1rem 0;
+    /* padding: 1rem 0; */
     display: grid;
     justify-content: center;
     align-content: center;
@@ -65,16 +65,18 @@ body, body::before, body::after {
     cursor: pointer;
     border: 1px solid var(--secondary);
     outline: none;
+    border-radius: 1.25rem;
 }
 
-.button > button:hover {
-    background-color: #404652;
+.darkMode:hover {
+    background-color: #404652 !important;
 }
 
-[all-clear],
-[delete],
-[operator],
-[equals] {
+.lightMode:hover {
+    background-color: rgb(206, 206, 206) !important;
+}
+
+[notNum] {
     color: var(--turquoise);
 }
 
@@ -89,8 +91,7 @@ body, body::before, body::after {
 }
 
 .output {
-    background-color: inherit;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
@@ -105,15 +106,11 @@ body, body::before, body::after {
 .output .previous-operand {
     color: rgba(255, 255, 255, .75);
     font-size: 1.5rem;
+    height: 2rem;
 }
 
 .output .current {
     color: rgba(255, 255, 255, 1);
     font-size: 3rem;
-}
-
-.fal,
-.previous-operand,
-.current {
-    background-color: inherit;
+    height: 7rem;
 }
